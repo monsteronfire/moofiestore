@@ -29,6 +29,7 @@ gem 'slim-rails'
 gem 'simple_form'
 gem 'devise'
 gem 'redis'
+gem 'hiredis'
 gem 'braintree'
 gem 'better_errors'
 
