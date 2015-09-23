@@ -1,1 +1,11 @@
-h2 index.html.slim
+h2 Featured Movies
+- @movies.each do |movie|
+  = link_to movie, class: "poster" do
+    image_tag movie.poster
+  end
+  h2= link_to movie.title, movie
+  p= movie.release_year
+  p= movie.price
+
+/ - if user_signed_in?
+/   = link_to "New Post", new_post_path
