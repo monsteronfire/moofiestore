@@ -1,1 +1,5 @@
-h2 show.html.slim
+h2= @movie.title
+p= link_to (image_tag asset_path("imdb_logo.png")), @movie.imdb, target: "_blank"
+= image_tag @movie.poster
+p= @movie.price
+p= @movie.description
