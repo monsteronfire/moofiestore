@@ -1,13 +1,20 @@
 #mycart
   h2 My Cart
-  p You've selected #{current_user.cart_count} movies!
+  p
+    | You've selected 
+    span.cart-count #{current_user.cart_count} movies!
 
-  - @cart_movies.each do |movie|
-    p= movie.title
-    = image_tag movie.poster
+  ul
+    - @cart_movies.each do |movie|
+      li.cart-movie
+        p= movie.title
 
-    = link_to "", class: "btn btn-default btn-cart-remove", data: {targetUrl: remove_from_cart_path(movie)} do
-      i.glyphicon.glyphicon-remove-circle
-    end
+        = link_to movie do
+          image_tag movie.poster
+        end
 
-    p= movie.price
+        = link_to "", class: "btn btn-default fi-x", data: {targetUrl: remove_from_cart_path(@movie)} do
+          i.glyphicon.glyphicon-remove-circle
+        end
+
+        p= movie.price

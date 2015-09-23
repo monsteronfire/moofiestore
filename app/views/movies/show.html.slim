@@ -1,11 +1,12 @@
 h2= @movie.title
+p= @movie.release_year
 p= link_to (image_tag asset_path("imdb_logo.png")), @movie.imdb, target: "_blank"
 = image_tag @movie.poster
 p= @movie.price
 p= @movie.description
 
 - if user_signed_in?
-  = link_to "", class: "btn btn-default", data: {target: @cart_action, addUrl: add_to_cart_path(@movie), removeUrl: remove_from_cart_path(@movie)} do
+  = link_to "", class: "btn btn-default btn-to-cart", data: {targetUrl: @cart_action, addUrl: add_to_cart_path(:movie_id), removeUrl: remove_from_cart_path(:movie_id)} do
     i.glyphicon.glyphicon-shopping-cart
     span= @cart_action
     span  Cart

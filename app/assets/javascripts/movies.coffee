@@ -2,14 +2,14 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(window).load ->
-  $('a[data-target]').click (e) ->
+  $('a.btn-default').click (e) ->
     e.preventDefault()
     $this = $(this)
     if $this.data('target') == 'Add to'
-      url = $this.data('addurl')
+      url = $this.data('addUrl')
       new_target = "Remove from"
     else
-      url = $this.data('removeurl')
+      url = $this.data('removeUrl')
       new_target = "Add to"
     $.ajax url: url, type: 'put', success: (data) ->
       $('.cart-count').html(data)

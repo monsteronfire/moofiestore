@@ -2,10 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(window).load ->
-  $('#mycart .btn-cart-remove').click (e) ->
+  $('#mycart .btn-to-cart').click (e) ->
     e.preventDefault()
     $this = $(this).closest('a')
-    url = $this.data('targeturl')
+    url = $this.data('targetUrl')
     $.ajax url: url, type: 'put', success: (data) ->
       $('.cart-count').html(data)
       $this.closest('.cart-movie').slideUp()
