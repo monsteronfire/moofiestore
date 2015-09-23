@@ -17,7 +17,7 @@ html
               = link_to cart_path do
                 i.glyphicon.glyphicon-shopping-cart 
                 span My Cart
-                = current_user.cart_count
+                span= current_user.cart_count
               end
 
             li= link_to "Sign Out", destroy_user_session_path, method: :delete
