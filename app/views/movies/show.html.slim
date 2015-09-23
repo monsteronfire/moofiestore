@@ -5,8 +5,8 @@ p= @movie.price
 p= @movie.description
 
 - if user_signed_in?
-  = link_to root_path, class: "btn btn-default", data: {target: @cart_action, addUrl: add_to_cart_path(@movie), removeUrl: remove_from_cart_path(@movie)} do
-    i.glyphicon.glyphicon-shopping-cart 
+  = link_to "", class: "btn btn-default", data: {target: @cart_action, addUrl: add_to_cart_path(@movie), removeUrl: remove_from_cart_path(@movie)} do
+    i.glyphicon.glyphicon-shopping-cart
     span= @cart_action
     span  Cart
   end
