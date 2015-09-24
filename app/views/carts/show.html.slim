@@ -13,8 +13,8 @@
           image_tag movie.poster
         end
 
-        = link_to "", class: "btn btn-default fi-x", data: {targetUrl: remove_from_cart_path(@movie)} do
-          i.glyphicon.glyphicon-remove-circle
+        = link_to "", class: "btn btn-default", data: {targetUrl: remove_from_cart_path(movie)} do
+          i.glyphicon.glyphicon-remove-circle.fi-x
         end
 
         p= movie.price

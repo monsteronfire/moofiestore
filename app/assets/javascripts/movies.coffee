@@ -1,17 +1,20 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-$(window).load ->
+jQuery ->
   $('a.btn-default').click (e) ->
+    console.log('loaded')
     e.preventDefault()
     $this = $(this)
-    if $this.data('target') == 'Add to'
+    if $this.data('target') is 'Add to'
       url = $this.data('addUrl')
       new_target = "Remove from"
     else
       url = $this.data('removeUrl')
       new_target = "Add to"
+      
     $.ajax url: url, type: 'put', success: (data) ->
       $('.cart-count').html(data)
       $this.find('span').html(new_target)
       $this.data('target', new_target)
+      console.log('welp')

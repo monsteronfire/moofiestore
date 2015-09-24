@@ -4,7 +4,7 @@ class MoviesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @movies = Movie.all.order("created_at DESC")
+    @movies = Movie.all.order("created_at ASC")
   end
 
   def show
