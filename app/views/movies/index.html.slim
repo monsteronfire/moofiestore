@@ -1,10 +1,10 @@
 h2 Featured Movies
-- @movies.each do |movie|
-  .container
-    ul
-      li
-        h2= link_to movie.title, movie
-        = image_tag movie.poster
-        p= movie.release_year
-        p= movie.price
-        = image_tag asset_path("imdb_logo.png")
+.container
+    ul.main-movie-list
+      - @movies.each do |movie|
+        li.main-movie-list-item
+          h2= link_to movie.title, movie
+          = image_tag movie.poster
+          p= movie.release_year
+          p= movie.price
+          = image_tag asset_path("imdb_logo.png")
